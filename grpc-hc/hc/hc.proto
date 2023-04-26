@@ -1,0 +1,16 @@
+// i am comment
+syntax = "proto3";
+
+package hc;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "example.com/go-hc-grpc;go_hc_grpc";
+
+service HealthCheck {
+    rpc GetStatus (google.protobuf.Empty) returns (Status) {}
+}
+
+message Status {
+    string ResponseStatus = 1;
+}
