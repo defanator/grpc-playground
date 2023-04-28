@@ -28,7 +28,7 @@ func (s *HealthServer) Check(ctx context.Context, in *pb.HealthCheckRequest) (*p
     case "bar":
         svcStatus = pb.HealthCheckResponse_NOT_SERVING;
     default:
-        svcStatus = pb.HealthCheckResponse_UNKNOWN;
+        svcStatus = pb.HealthCheckResponse_SERVICE_UNKNOWN;
     }
 
     return &pb.HealthCheckResponse{Status: svcStatus}, nil
